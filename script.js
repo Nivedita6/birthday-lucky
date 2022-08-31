@@ -4,9 +4,14 @@ const checkLuckyButton = document.querySelector("#check-lucky");
 const outputText = document.querySelector("#output-text");
 
 function checkLuckyOrNot(){
-  const dob = dateOfBirth.value;
-  const sum = addDigits(dob);
-  checkDivisible(sum, luckyNumber.value);
+  if(dateOfBirth.value && luckyNumber.value){
+    const dob = dateOfBirth.value;
+    const sum = addDigits(dob);
+    checkDivisible(sum, luckyNumber.value);
+  }else{
+    outputText.innerText = "Please enter date of birth and lucky number."
+  }
+
 }
 
 function checkDivisible(sum, luckyNumber){
